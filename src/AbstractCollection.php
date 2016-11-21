@@ -348,7 +348,7 @@ abstract class AbstractCollection implements CollectionInterface
     /**
      * Gets all keys/indices of this {@link KeysProviderInterface} implementation.
      *
-     * @return array The keys/indices of this {@link KeysProviderInterface} implementation, in the order of the
+     * @return static The keys/indices of this {@link KeysProviderInterface} implementation, in the order of the
      *               corresponding elements in this implementation.
      * @throws Exception\InvalidArgumentException
      * @throws \Zend\Stdlib\Exception\InvalidArgumentException
@@ -361,7 +361,7 @@ abstract class AbstractCollection implements CollectionInterface
     /**
      * Gets all values of this {@link ValuesProviderInterface} implementation.
      *
-     * @return mixed The values of all elements in this {@link ValuesProviderInterface} implementation, in the order
+     * @return static The values of all elements in this {@link ValuesProviderInterface} implementation, in the order
      *               they appear in this implementation.
      * @throws Exception\InvalidArgumentException
      * @throws \Zend\Stdlib\Exception\InvalidArgumentException
@@ -617,7 +617,7 @@ abstract class AbstractCollection implements CollectionInterface
      *
      * @param Closure $predicate The predicate on which to partition.
      *
-     * @return static[] An array with two elements. The first element contains the collection of elements where the
+     * @return static An array with two elements. The first element contains the collection of elements where the
      * @throws Exception\InvalidArgumentException predicate returned TRUE, the second element contains the
      *                                            collection of elements where the predicate returned FALSE.
      * @throws \Zend\Stdlib\Exception\InvalidArgumentException
@@ -635,10 +635,12 @@ abstract class AbstractCollection implements CollectionInterface
             }
         }
 
-        return [
-            new static($matches),
-            new static($noMatches)
-        ];
+        return new static(
+            [
+                new static($matches),
+                new static($noMatches)
+            ]
+        );
     }
 
     /**
@@ -821,7 +823,7 @@ abstract class AbstractCollection implements CollectionInterface
     /**
      * Creates and returns a copy of this object. The precise meaning of "copy" may depend on the class of the object.
      *
-     * @return static
+     * @return void
      */
     public function __clone()
     {
