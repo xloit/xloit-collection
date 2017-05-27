@@ -1,38 +1,38 @@
 {
-    "name": "xloit/xloit-collection",
-    "type": "library",
-    "description": "Xloit Collection Library",
-    "keywords": [
-        "xloit",
-        "collection",
-        "library"
-    ],
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Yudha Setiawan",
-            "email": "me@yudhasetiawan.com",
-            "homepage": "http://yudhasetiawan.com/"
-        }
-    ],
-    "require": {
-        "php": "^5.5 || ^7.0",
-        "xloit/xloit-exception": "^0.0",
-        "xloit/xloit-std": "^0.0"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "~4.0"
-    },
-    "suggest": {
-    },
-    "autoload": {
-        "psr-4": {
-            "Xloit\\Collection\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-0": {
-            "Xloit\\Collection\\Test\\": "tests/"
-        }
+  "name": "xloit/xloit-collection",
+  "type": "library",
+  "description": "Xloit Collection Library",
+  "keywords": [
+    "xloit",
+    "collection",
+    "library"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Yudha Setiawan",
+      "email": "me@yudhasetiawan.com",
+      "homepage": "http://yudhasetiawan.com/"
     }
+  ],
+  "require": {
+    "php": "^5.5 || ^7.0",
+    "xloit/xloit-exception": "^0.0",
+    "xloit/xloit-std": "^0.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0"
+  },
+  "suggest": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Xloit\\Collection\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-0": {
+      "Xloit\\Collection\\Test\\": "tests/"
+    }
+  }
 }
