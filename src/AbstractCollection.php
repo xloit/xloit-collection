@@ -44,7 +44,7 @@ abstract class AbstractCollection implements CollectionInterface
      *
      * @param array $collection
      *
-     * @throws Exception\InvalidArgumentException
+     * @throws \Xloit\Collection\Exception\InvalidArgumentException
      * @throws \Zend\Stdlib\Exception\InvalidArgumentException
      */
     public function __construct($collection = null)
@@ -60,7 +60,7 @@ abstract class AbstractCollection implements CollectionInterface
      * @param array|Traversable $collection
      *
      * @return void
-     * @throws Exception\InvalidArgumentException
+     * @throws \Xloit\Collection\Exception\InvalidArgumentException
      * @throws \Zend\Stdlib\Exception\InvalidArgumentException
      */
     public function exchangeArray($collection)
@@ -89,9 +89,7 @@ abstract class AbstractCollection implements CollectionInterface
      * @param mixed $index
      * @param mixed $element
      *
-     * @return static
-     * @throws \Zend\Stdlib\Exception\InvalidArgumentException
-     * @throws Exception\InvalidArgumentException
+     * @return $this
      */
     public function set($index, $element)
     {
@@ -110,9 +108,7 @@ abstract class AbstractCollection implements CollectionInterface
      *
      * @param mixed $element
      *
-     * @return static
-     * @throws Exception\InvalidArgumentException
-     * @throws \Zend\Stdlib\Exception\InvalidArgumentException
+     * @return $this
      */
     public function append($element)
     {
@@ -125,9 +121,7 @@ abstract class AbstractCollection implements CollectionInterface
      *
      * @param mixed $element
      *
-     * @return static
-     * @throws \Xloit\Collection\Exception\InvalidArgumentException
-     * @throws \Zend\Stdlib\Exception\InvalidArgumentException
+     * @return $this
      */
     public function push($element)
     {
@@ -147,9 +141,7 @@ abstract class AbstractCollection implements CollectionInterface
      *
      * @param mixed $element
      *
-     * @return static
-     * @throws \Zend\Stdlib\Exception\InvalidArgumentException
-     * @throws Exception\InvalidArgumentException
+     * @return $this
      */
     public function add($element)
     {
@@ -164,9 +156,7 @@ abstract class AbstractCollection implements CollectionInterface
      *
      * @param mixed $element
      *
-     * @return static
-     * @throws \Zend\Stdlib\Exception\InvalidArgumentException
-     * @throws Exception\InvalidArgumentException
+     * @return $this
      */
     public function prepend($element)
     {
@@ -182,8 +172,6 @@ abstract class AbstractCollection implements CollectionInterface
      * @param mixed $element
      *
      * @return void
-     * @throws Exception\InvalidArgumentException
-     * @throws \Zend\Stdlib\Exception\InvalidArgumentException
      */
     public function unshift($element)
     {
@@ -196,9 +184,8 @@ abstract class AbstractCollection implements CollectionInterface
      * @param string|int $index
      *
      * @return mixed
-     * @throws Exception\RuntimeException
-     * @throws Exception\InvalidArgumentException
-     * @throws Exception\OutOfBoundsException
+     * @throws \Xloit\Collection\Exception\InvalidArgumentException
+     * @throws \Xloit\Collection\Exception\OutOfBoundsException
      */
     public function get($index)
     {
@@ -220,7 +207,7 @@ abstract class AbstractCollection implements CollectionInterface
      * @param string|int $key
      *
      * @return bool
-     * @throws Exception\InvalidArgumentException
+     * @throws \Xloit\Collection\Exception\InvalidArgumentException
      */
     public function has($key)
     {
@@ -257,7 +244,7 @@ abstract class AbstractCollection implements CollectionInterface
      * @param string|int $key
      *
      * @return bool
-     * @throws Exception\InvalidArgumentException
+     * @throws \Xloit\Collection\Exception\InvalidArgumentException
      */
     public function containsKey($key)
     {
@@ -273,7 +260,6 @@ abstract class AbstractCollection implements CollectionInterface
      * @param mixed $element
      *
      * @return bool
-     * @throws Exception\InvalidArgumentException
      */
     public function contains($element)
     {
@@ -287,8 +273,8 @@ abstract class AbstractCollection implements CollectionInterface
      *
      * @param string|int $key
      *
-     * @return mixed The removed element
-     * @throws Exception\InvalidArgumentException
+     * @return mixed The removed element.
+     * @throws \Xloit\Collection\Exception\InvalidArgumentException
      */
     public function remove($key)
     {
@@ -309,7 +295,6 @@ abstract class AbstractCollection implements CollectionInterface
      * @param mixed $element The element to remove.
      *
      * @return bool TRUE if this collection contained the specified element, FALSE otherwise.
-     * @throws Exception\InvalidArgumentException
      */
     public function removeElement($element)
     {
@@ -328,7 +313,7 @@ abstract class AbstractCollection implements CollectionInterface
     /**
      * Shifts the first value of the collection off and returns it, shortening the collection by one element.
      *
-     * @return  mixed
+     * @return mixed
      */
     public function shift()
     {
@@ -338,7 +323,7 @@ abstract class AbstractCollection implements CollectionInterface
     /**
      * Pops and returns the last value of the collection, shortening the collection by one element.
      *
-     * @return  mixed
+     * @return mixed
      */
     public function pop()
     {
@@ -348,9 +333,9 @@ abstract class AbstractCollection implements CollectionInterface
     /**
      * Gets all keys/indices of this {@link KeysProviderInterface} implementation.
      *
-     * @return static The keys/indices of this {@link KeysProviderInterface} implementation, in the order of the
+     * @return $this The keys/indices of this {@link KeysProviderInterface} implementation, in the order of the
      *               corresponding elements in this implementation.
-     * @throws Exception\InvalidArgumentException
+     * @throws \Xloit\Collection\Exception\InvalidArgumentException
      * @throws \Zend\Stdlib\Exception\InvalidArgumentException
      */
     public function getKeys()
@@ -361,9 +346,9 @@ abstract class AbstractCollection implements CollectionInterface
     /**
      * Gets all values of this {@link ValuesProviderInterface} implementation.
      *
-     * @return static The values of all elements in this {@link ValuesProviderInterface} implementation, in the order
+     * @return $this The values of all elements in this {@link ValuesProviderInterface} implementation, in the order
      *               they appear in this implementation.
-     * @throws Exception\InvalidArgumentException
+     * @throws \Xloit\Collection\Exception\InvalidArgumentException
      * @throws \Zend\Stdlib\Exception\InvalidArgumentException
      */
     public function getValues()
@@ -429,7 +414,7 @@ abstract class AbstractCollection implements CollectionInterface
      * @param mixed $offset
      *
      * @return bool
-     * @throws Exception\InvalidArgumentException
+     * @throws \Xloit\Collection\Exception\InvalidArgumentException
      */
     public function offsetExists($offset)
     {
@@ -444,9 +429,8 @@ abstract class AbstractCollection implements CollectionInterface
      * @param mixed $offset
      *
      * @return mixed
-     * @throws Exception\InvalidArgumentException
-     * @throws Exception\OutOfBoundsException
-     * @throws Exception\RuntimeException
+     * @throws \Xloit\Collection\Exception\OutOfBoundsException
+     * @throws \Xloit\Collection\Exception\InvalidArgumentException
      */
     public function offsetGet($offset)
     {
@@ -462,8 +446,6 @@ abstract class AbstractCollection implements CollectionInterface
      * @param mixed $value
      *
      * @return void
-     * @throws Exception\InvalidArgumentException
-     * @throws \Zend\Stdlib\Exception\InvalidArgumentException
      */
     public function offsetSet($offset, $value)
     {
@@ -478,7 +460,7 @@ abstract class AbstractCollection implements CollectionInterface
      * @param mixed $offset
      *
      * @return void
-     * @throws Exception\InvalidArgumentException
+     * @throws \Xloit\Collection\Exception\InvalidArgumentException
      */
     public function offsetUnset($offset)
     {
@@ -488,7 +470,7 @@ abstract class AbstractCollection implements CollectionInterface
     /**
      * Tests for the existence of an element that satisfies the given predicate.
      *
-     * @param Closure $predicate The predicate
+     * @param Closure $predicate The predicate.
      *
      * @return bool TRUE if the predicate is TRUE for at least one element, FALSE otherwise.
      */
@@ -532,12 +514,12 @@ abstract class AbstractCollection implements CollectionInterface
     /**
      * Chunks the collection into a collection containing $size sized collections.
      *
-     * @param int     $size         Chunk size
-     * @param boolean $preserveKeys When set to true keys will be preserved
+     * @param int  $size         Chunk size.
+     * @param bool $preserveKeys When set to true keys will be preserved.
      *
-     * @return static
-     * @throws \Zend\Stdlib\Exception\InvalidArgumentException
+     * @return $this
      * @throws \Xloit\Collection\Exception\InvalidArgumentException
+     * @throws \Zend\Stdlib\Exception\InvalidArgumentException
      */
     public function chunk($size, $preserveKeys = null)
     {
@@ -555,7 +537,7 @@ abstract class AbstractCollection implements CollectionInterface
     /**
      * Shuffles the items in the collection and returns TRUE on success and FALSE on failure.
      *
-     * @return  bool
+     * @return bool
      */
     public function shuffle()
     {
@@ -568,8 +550,8 @@ abstract class AbstractCollection implements CollectionInterface
      *
      * @param Closure $mapper
      *
-     * @return static A {@link MappableInterface} implementation with the new results of the map operation.
-     * @throws Exception\InvalidArgumentException
+     * @return $this A {@link MappableInterface} implementation with the new results of the map operation.
+     * @throws \Xloit\Collection\Exception\InvalidArgumentException
      * @throws \Zend\Stdlib\Exception\InvalidArgumentException
      */
     public function map(Closure $mapper)
@@ -583,8 +565,8 @@ abstract class AbstractCollection implements CollectionInterface
      *
      * @param Closure $predicate The predicate used for filtering.
      *
-     * @return static A {@link FilterableInterface} implementation with the results of the filter operation.
-     * @throws Exception\InvalidArgumentException
+     * @return $this A {@link FilterableInterface} implementation with the results of the filter operation.
+     * @throws \Xloit\Collection\Exception\InvalidArgumentException
      * @throws \Zend\Stdlib\Exception\InvalidArgumentException
      */
     public function filter(Closure $predicate)
@@ -597,8 +579,7 @@ abstract class AbstractCollection implements CollectionInterface
      *
      * @param Closure $predicate The predicate on which to iterated.
      *
-     * @return bool TRUE, if the predicate yields TRUE for all elements, FALSE otherwise.
-     *              predicate returned FALSE.
+     * @return bool TRUE, if the predicate yields TRUE for all elements, FALSE otherwise. predicate returned FALSE.
      */
     public function forAll(Closure $predicate)
     {
@@ -617,9 +598,10 @@ abstract class AbstractCollection implements CollectionInterface
      *
      * @param Closure $predicate The predicate on which to partition.
      *
-     * @return static An array with two elements. The first element contains the collection of elements where the
-     * @throws Exception\InvalidArgumentException predicate returned TRUE, the second element contains the
-     *                                            collection of elements where the predicate returned FALSE.
+     * @return $this An array with two elements. The first element contains the collection of elements where the
+     *               predicate returned TRUE, the second element contains the collection of elements where the
+     *               predicate returned FALSE.
+     * @throws \Xloit\Collection\Exception\InvalidArgumentException
      * @throws \Zend\Stdlib\Exception\InvalidArgumentException
      */
     public function partition(Closure $predicate)
@@ -653,8 +635,8 @@ abstract class AbstractCollection implements CollectionInterface
      * @param int      $offset The offset to start from.
      * @param int|null $length The maximum number of elements to return, or null for no limit.
      *
-     * @return static A collection of the sliced elements.
-     * @throws Exception\InvalidArgumentException
+     * @return $this A collection of the sliced elements.
+     * @throws \Xloit\Collection\Exception\InvalidArgumentException
      * @throws \Zend\Stdlib\Exception\InvalidArgumentException
      */
     public function slice($offset, $length = null)
@@ -699,7 +681,7 @@ abstract class AbstractCollection implements CollectionInterface
     /**
      * Clear the collections data.
      *
-     * @return static
+     * @return $this
      */
     public function clear()
     {
@@ -718,9 +700,9 @@ abstract class AbstractCollection implements CollectionInterface
      *
      * @param array|Traversable $collection
      *
-     * @return static
-     * @throws \Zend\Stdlib\Exception\InvalidArgumentException
+     * @return $this
      * @throws \Xloit\Collection\Exception\InvalidArgumentException
+     * @throws \Zend\Stdlib\Exception\InvalidArgumentException
      */
     public function merge($collection)
     {
@@ -782,7 +764,7 @@ abstract class AbstractCollection implements CollectionInterface
      * @param string $serialized
      *
      * @return void
-     * @throws Exception\InvalidArgumentException
+     * @throws \Xloit\Collection\Exception\InvalidArgumentException
      * @throws \Zend\Stdlib\Exception\InvalidArgumentException
      */
     public function unserialize($serialized)

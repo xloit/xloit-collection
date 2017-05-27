@@ -65,7 +65,6 @@ interface CollectionInterface
             Serializable
 
 {
-
     /**
      * Prepends the passed item to the front of the collection and returns the new number of elements in the
      * collection.
@@ -162,10 +161,10 @@ interface CollectionInterface
     /**
      * Chunks the collection into a collection containing $size sized collections.
      *
-     * @param int     $size         Chunk size
-     * @param boolean $preserveKeys When set to true keys will be preserved
+     * @param int  $size         Chunk size
+     * @param bool $preserveKeys When set to true keys will be preserved
      *
-     * @return static
+     * @return $this
      */
     public function chunk($size, $preserveKeys = null);
 
@@ -186,7 +185,7 @@ interface CollectionInterface
      *
      * @param array|\Traversable $collection
      *
-     * @return static
+     * @return $this
      */
     public function merge($collection);
 }

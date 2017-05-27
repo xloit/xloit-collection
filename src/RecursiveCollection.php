@@ -32,9 +32,9 @@ class RecursiveCollection extends Collection
      * @param mixed $index
      * @param mixed $element
      *
-     * @return static
+     * @return $this
+     * @throws \Xloit\Collection\Exception\InvalidArgumentException
      * @throws \Zend\Stdlib\Exception\InvalidArgumentException
-     * @throws Exception\InvalidArgumentException
      */
     public function set($index, $element)
     {
@@ -55,9 +55,9 @@ class RecursiveCollection extends Collection
      *
      * @param mixed $element
      *
-     * @return static
+     * @return $this
+     * @throws \Xloit\Collection\Exception\InvalidArgumentException
      * @throws \Zend\Stdlib\Exception\InvalidArgumentException
-     * @throws Exception\InvalidArgumentException
      */
     public function prepend($element)
     {
